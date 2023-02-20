@@ -1,0 +1,18 @@
+.only-bold{
+    font-weight: 700;
+}
+
+.rated{
+    font-size: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 2px;
+    border-radius: 2px;
+    margin-right: 7px;
+}
+
+.comm{
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    top: 0;
+    left: 0;
+    background-color: #fff;
+}

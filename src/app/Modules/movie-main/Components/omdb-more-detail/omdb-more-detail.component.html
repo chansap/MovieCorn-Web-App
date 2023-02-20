@@ -1,0 +1,98 @@
+<section
+  class="text-light pt-5 bg-dark"
+  style="min-height: 609px"
+  *ngIf="detailAbout"
+>
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-end">
+      <img
+        src="{{ detailAbout?.Poster }}"
+        alt="poster"
+        class="img-fluid"
+        style="height: 100%"
+      />
+    </div>
+    <div class="col-md-8">
+      <p class="h3">{{ detailAbout?.Title }} ({{ detailAbout?.Year }})</p>
+      <p class="small">
+        <span class="rated">{{ detailAbout?.Rated }}</span
+        ><span>{{ detailAbout?.Genre }} &nbsp; &nbsp;</span>
+        <span class="comm"></span>
+        <span>&nbsp; &nbsp; {{ detailAbout?.Runtime }}</span>
+        <span> &nbsp; &nbsp;</span>
+        <span class="comm"></span>
+        <span> &nbsp; &nbsp;</span>
+        <span>Released on : &nbsp;{{ detailAbout?.Released }}</span>
+      </p>
+      <div>
+        <div class="row pt-2">
+          <div class="col-md-2"><p class="small m-0 p-0">Meta Score :</p></div>
+          <div class="col-md-3 mt-1 pt-2">
+            <mat-progress-bar
+              mode="determinate"
+              value="{{ detailAbout?.Metascore }}"
+            ></mat-progress-bar>
+          </div>
+        </div>
+      </div>
+      <div class="mt-1">
+        <div class="row pt-2">
+          <div class="col-md-2"><p class="small m-0 p-0">IMDB Rating :</p></div>
+          <div class="col-md-3 small">{{ detailAbout?.imdbRating }} /10</div>
+        </div>
+      </div>
+      <div>
+        <div class="row mt-4">
+          <p class="mb-1 small">Ratings :</p>
+          <div
+            class="col-md-3 small"
+            *ngFor="let rating of detailAbout?.Ratings"
+          >
+            <p class="m-0">{{ rating.Source }}</p>
+            <p class="text-start m-0" style="font-size: 12px">
+              {{ rating.Value }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4">
+        <p style="margin-bottom: 6px">
+          <span class="only-bold">Overview :</span>
+        </p>
+        <div class="row small">
+          <div class="col-md-12">
+            {{ detailAbout?.Plot }}
+          </div>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div class="row">
+          <p class="small">
+            Actors : <span>&nbsp;&nbsp;</span> {{ detailAbout?.Actors }}
+          </p>
+        </div>
+      </div>
+      <div class="mt-0">
+        <div class="row">
+          <p class="small">
+            Languages : <span>&nbsp;&nbsp;</span> {{ detailAbout?.Language }}
+          </p>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="small only-bold">{{ detailAbout?.Director }}</div>
+            <div class="small">Director</div>
+          </div>
+          <div class="col-md-7">
+            <div class="small only-bold">
+              {{ detailAbout?.Writer }}
+            </div>
+            <div class="small">Writer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

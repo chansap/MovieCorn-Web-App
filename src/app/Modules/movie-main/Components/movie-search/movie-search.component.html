@@ -1,0 +1,39 @@
+<!-- <section class="container pt-2 m-2"> -->
+<!-- <label for="movie" class="form-label">Search Any Movie :</label> -->
+<input
+  type="text"
+  id="movie"
+  class="form-control"
+  style="max-width: 100%"
+  placeholder="Search a movie (Min 3 Characters Ex. Ant)"
+  [formControl]="searchMoviesCtrl"
+  [matAutocomplete]="auto"
+/>
+<mat-autocomplete #auto="matAutocomplete">
+  <mat-option
+    *ngFor="let movie of filteredMovies"
+    [value]="movie.Title"
+    (click)="optionClick(movie)"
+  >
+    <div
+      class="m-2 p-2 d-flex flex-row justify-content-start"
+      style="margin-top: 5px; padding: 2px"
+    >
+      <img
+        *ngIf="movie.Poster != 'N/A'"
+        src="{{ movie.Poster }}"
+        alt="logo"
+        style="height: 50px; width: 30px"
+      />
+      <p style="font-size: small">
+        &nbsp;
+        <span style="font-weight: light">{{ movie.Title }} &nbsp;&nbsp;</span>
+        <span style="font-weight: bold">{{ movie.Year }}</span>
+      </p>
+    </div>
+  </mat-option>
+</mat-autocomplete>
+
+<!--  
+      style="position: relative; left: 70%"-->
+<!-- </section> -->

@@ -1,0 +1,11 @@
+.movie-slide {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+div::-webkit-scrollbar {
+    display: none;
+    /* width: px;
+    background: transparent; */
+  }
+

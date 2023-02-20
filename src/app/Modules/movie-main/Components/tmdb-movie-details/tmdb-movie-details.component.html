@@ -1,0 +1,135 @@
+<section
+  class="text-light pt-5 bg-dark"
+  style="min-height: 609px"
+  *ngIf="detailAbout"
+>
+  <div class="row justify-content-center">
+    <div class="col-md-4 text-end">
+      <img
+        src="{{ imgPoster + detailAbout?.poster_path }}"
+        alt="poster"
+        class="img-fluid"
+        style="height: 530px"
+      />
+    </div>
+    <div class="col-md-8">
+      <p class="h3">{{ detailAbout?.original_title }}</p>
+      <p class="small">
+        <!-- <span class="rated">{{ detailAbout?.Rated }}</span> -->
+        <!-- <span>{{ detailAbout?.Genre }} &nbsp; &nbsp;</span> -->
+
+        <span class="col-md-3 small" *ngFor="let genre of detailAbout?.genres">
+          <span class="m-0">{{ genre.name }},</span>
+        </span>
+        <span> &nbsp; &nbsp;</span>
+        <span class="comm"></span>
+        <span>&nbsp; &nbsp; {{ detailAbout?.runtime }} min</span>
+        <span> &nbsp; &nbsp;</span>
+        <span class="comm"></span>
+        <span> &nbsp; &nbsp;</span>
+        <span
+          >{{ detailAbout?.status }} : &nbsp;{{
+            detailAbout?.release_date
+          }}</span
+        >
+      </p>
+      <!-- <div>
+        <div class="row pt-2">
+          <div class="col-md-2"><p class="small m-0 p-0">Meta Score :</p></div>
+          <div class="col-md-3 mt-1 pt-2">
+            <mat-progress-bar
+              mode="determinate"
+              value="{{ detailAbout?.Metascore }}"
+            ></mat-progress-bar>
+          </div>
+        </div>
+      </div> -->
+      <div class="mt-1">
+        <div class="row pt-2">
+          <div class="col-md-2"><p class="small m-0 p-0">Voting :</p></div>
+          <div class="col-md-3 small">
+            {{ detailAbout?.vote_average | number : "1.2-2" }} /10
+          </div>
+        </div>
+      </div>
+      <!-- <div>
+        <div class="row mt-4">
+          <p class="mb-1 small">Ratings :</p>
+          <div
+            class="col-md-3 small"
+            *ngFor="let rating of detailAbout?.Ratings"
+          >
+            <p class="m-0">{{ rating.Source }}</p>
+            <p class="text-start m-0" style="font-size: 12px">
+              {{ rating.Value }}
+            </p>
+          </div>
+        </div>
+      </div> -->
+      <div class="mt-4">
+        <p style="margin-bottom: 6px">
+          <span class="only-bold">Overview :</span>
+        </p>
+        <div class="row small">
+          <div class="col-md-12">
+            {{ detailAbout?.overview }}
+          </div>
+        </div>
+      </div>
+      <!-- <div class="mt-4">
+        <div class="row">
+          <p class="small">
+            Actors : <span>&nbsp;&nbsp;</span> {{ detailAbout?.Actors }}
+          </p>
+        </div>
+      </div> -->
+      <div class="mt-3">
+        <div class="row">
+          <p class="small">
+            Languages : <span>&nbsp;&nbsp;</span>
+            <!-- {{ detailAbout?.Language }} -->
+
+            <span
+              class="col-md-3 small"
+              *ngFor="let spoken_language of detailAbout?.spoken_languages"
+            >
+              <span class="m-0">{{ spoken_language.english_name }},</span>
+            </span>
+          </p>
+        </div>
+      </div>
+      <div class="mt-4">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="small only-bold">{{ detailAbout?.tagline }}</div>
+            <div class="small">Tagline</div>
+          </div>
+          <div class="col-md-7">
+            <div class="small only-bold">
+              {{ detailAbout?.budget }}
+            </div>
+            <div class="small">Budget</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="row">
+          <div class="col-md-4">
+            <a
+              (click)="routeToImdb(detailAbout.imdb_id)"
+              class="btn btn-light mt-3"
+            >
+              <img
+                src="../../../../../assets/chevron.png"
+                alt="logo"
+                class="img-fluid"
+              />
+              Read more on IMDB
+            </a>
+          </div>
+          <!-- <a class="btn btn-primary">Read more on IMDB</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

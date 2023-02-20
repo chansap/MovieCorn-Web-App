@@ -1,0 +1,205 @@
+<!-- Most Populars -->
+<section class="mt-2 p-3 text-white bg-dark">
+  <div class="container-fluid">
+    <p class="h3 ms-2 mb-4">Most Populars</p>
+    <div class="card-group">
+      <div class="d-flex flex-row movie-slide">
+        <div *ngFor="let i of popmovies">
+          <div
+            class="card ms-2 movie-slide"
+            style="
+              width: 11.4rem;
+              min-height: 23rem;
+              max-height: 23rem;
+              cursor: pointer;
+            "
+            (click)="openTmdbDetail(i.id)"
+          >
+            <img
+              src="{{ imgPoster + '' + i.poster_path }}"
+              alt=""
+              class="card-img-top img-fluid h-75"
+              style="width: 180px; max-height: 250px"
+            />
+            <div class="card-body">
+              <h5 class="card-title small text-dark mb-0">{{ i.title }}</h5>
+              <p class="card-text small text-dark">{{ i.release_date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Now Playing -->
+<section class="mt-2 p-3 text-white bg-dark">
+  <div class="container-fluid">
+    <p class="h3 ms-2 mb-4">Now Streaming</p>
+    <div class="card-group">
+      <div class="d-flex flex-row movie-slide">
+        <div *ngFor="let i of nowPlaying">
+          <div
+            class="card ms-2 movie-slide"
+            style="
+              width: 11.4rem;
+              min-height: 23rem;
+              max-height: 23rem;
+              cursor: pointer;
+            "
+            (click)="openTmdbDetail(i.id)"
+          >
+            <img
+              src="{{ imgPoster + '' + i.poster_path }}"
+              alt=""
+              class="card-img-top img-fluid h-75"
+              style="width: 180px; max-height: 250px"
+            />
+            <div class="card-body">
+              <h5 class="card-title small text-dark mb-0">{{ i.title }}</h5>
+              <p class="card-text small text-dark">{{ i.release_date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Upcoming -->
+<section class="mt-2 p-3 text-white bg-dark">
+  <div class="container-fluid">
+    <p class="h3 ms-2 mb-4">Upcoming</p>
+    <div class="card-group">
+      <div class="d-flex flex-row movie-slide">
+        <div *ngFor="let i of upcmng">
+          <div
+            class="card ms-2 movie-slide"
+            style="
+              width: 11.4rem;
+              min-height: 23rem;
+              max-height: 23rem;
+              cursor: pointer;
+            "
+            (click)="openTmdbDetail(i.id)"
+          >
+            <img
+              src="{{ imgPoster + '' + i.poster_path }}"
+              alt=""
+              class="card-img-top img-fluid h-75"
+              style="width: 180px; max-height: 250px"
+            />
+            <div class="card-body">
+              <h5 class="card-title small text-dark mb-0">{{ i.title }}</h5>
+              <p class="card-text small text-dark">{{ i.release_date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TopRated -->
+<section class="mt-2 p-3 text-white bg-dark">
+  <div class="container-fluid">
+    <p class="h3 ms-2 mb-4">Top Rated</p>
+    <div class="card-group">
+      <div class="d-flex flex-row movie-slide">
+        <div *ngFor="let i of topRated">
+          <div
+            class="card ms-2 movie-slide"
+            style="
+              width: 11.4rem;
+              min-height: 23rem;
+              max-height: 23rem;
+              cursor: pointer;
+            "
+            (click)="openTmdbDetail(i.id)"
+          >
+            <img
+              src="{{ imgPoster + '' + i.poster_path }}"
+              alt=""
+              class="card-img-top img-fluid h-75"
+              style="width: 180px; max-height: 250px"
+            />
+            <div class="card-body">
+              <h5 class="card-title small text-dark mb-0">{{ i.title }}</h5>
+              <p class="card-text small text-dark">{{ i.release_date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TV Popular -->
+<section class="mt-2 p-3 text-white bg-dark">
+  <div class="container-fluid">
+    <p class="h3 ms-2 mb-4">Popular TV Shows</p>
+    <div class="card-group">
+      <div class="d-flex flex-row movie-slide">
+        <div *ngFor="let i of tv_popular">
+          <div
+            class="card ms-2 movie-slide"
+            style="
+              width: 11.4rem;
+              min-height: 23rem;
+              max-height: 23rem;
+              cursor: pointer;
+            "
+          >
+            <img
+              src="{{ imgPoster + '' + i.poster_path }}"
+              alt=""
+              class="card-img-top img-fluid h-75"
+              style="width: 180px; max-height: 250px"
+            />
+            <div class="card-body">
+              <h5 class="card-title small text-dark mb-0">
+                {{ i.original_name }}
+              </h5>
+              <p class="card-text small text-dark">{{ i.first_air_date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TV top_rated -->
+<section class="mt-2 p-3 text-white bg-dark">
+  <div class="container-fluid">
+    <p class="h3 ms-2 mb-4">Top Rated TV Shows</p>
+    <div class="card-group">
+      <div class="d-flex flex-row movie-slide">
+        <div *ngFor="let i of tv_top_rated">
+          <div
+            class="card ms-2 movie-slide"
+            style="
+              width: 11.4rem;
+              min-height: 23rem;
+              max-height: 23rem;
+              cursor: pointer;
+            "
+          >
+            <img
+              src="{{ imgPoster + '' + i.poster_path }}"
+              alt=""
+              class="card-img-top img-fluid h-75"
+              style="width: 180px; max-height: 250px"
+            />
+            <div class="card-body">
+              <h5 class="card-title small text-dark mb-0">
+                {{ i.original_name }}
+              </h5>
+              <p class="card-text small text-dark">{{ i.first_air_date }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
