@@ -13,6 +13,7 @@ import { MainDashboardComponent } from './Components/main-dashboard/main-dashboa
 import { Error404Component } from './Components/error404/error404.component';
 import { MoviemainRoutingModule } from './movie-mainRouting.module';
 import { TmdbMovieDetailsComponent } from './Components/tmdb-movie-details/tmdb-movie-details.component';
+import { TmdbTvDetailsComponent } from './Components/tmdb-tv-details/tmdb-tv-details.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TmdbMovieDetailsComponent } from './Components/tmdb-movie-details/tmdb-
     OmdbMoreDetailComponent,
     MainDashboardComponent,
     Error404Component,
-    TmdbMovieDetailsComponent
+    TmdbMovieDetailsComponent,
+    TmdbTvDetailsComponent
   ],
   imports: [
     MoviemainRoutingModule,

@@ -4,11 +4,13 @@ import { Error404Component } from './Modules/movie-main/Components/error404/erro
 import { MainDashboardComponent } from './Modules/movie-main/Components/main-dashboard/main-dashboard.component';
 import { OmdbMoreDetailComponent } from './Modules/movie-main/Components/omdb-more-detail/omdb-more-detail.component';
 import { TmdbMovieDetailsComponent } from './Modules/movie-main/Components/tmdb-movie-details/tmdb-movie-details.component';
+import { TmdbTvDetailsComponent } from './Modules/movie-main/Components/tmdb-tv-details/tmdb-tv-details.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: MainDashboardComponent},
   {path: 'movieid', component: OmdbMoreDetailComponent},
   {path: 'tmdb', component: TmdbMovieDetailsComponent},
+  {path: 'tmdbTV', component:TmdbTvDetailsComponent},
 
   
   // {path: 'movieid/:imdbId', component: OmdbMoreDetailComponent},

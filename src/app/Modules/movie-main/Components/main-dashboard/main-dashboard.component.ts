@@ -20,11 +20,14 @@ export class MainDashboardComponent implements OnInit {
               private router : Router) { }
 
   ngOnInit(): void {
+
+    setTimeout( () => {
     this.tmdbServ.tmdb_popular().subscribe( (popMovie) => {
       // console.log(popMovie.results);
       this.popmovies = popMovie.results
     })
-
+  },3000)
+  
     this.tmdbServ.tmdb_nowPlaying().subscribe( (nowPlaying) => {
       // console.log(nowPlaying.results);
       this.nowPlaying = nowPlaying.results
@@ -58,4 +61,9 @@ export class MainDashboardComponent implements OnInit {
   }
     // this.router.navigate(['movieid'], { queryParams: {imdbId: movie.imdbID} })
   
+
+  openTmdbTVDetail(id:any){
+      console.log(id);
+      this.router.navigate(['tmdbTV'], { queryParams: {tmdbTVId : id} } )
+  }
 }

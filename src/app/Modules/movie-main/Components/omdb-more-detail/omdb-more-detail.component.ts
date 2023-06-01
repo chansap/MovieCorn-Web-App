@@ -12,6 +12,7 @@ export class OmdbMoreDetailComponent implements OnInit {
 
   imdbid:any
   detailAbout:any
+  loader:Boolean = false;
 //   detailAbout :any = {
 //     "Title": "The Incredible Hulk",
 //     "Year": "2008",
@@ -90,11 +91,14 @@ export class OmdbMoreDetailComponent implements OnInit {
     //     console.log("OmdbMoreDetailComponent",l);
     //   }
     // )
-
+    this.loader = true
 
     this.activatedroute.queryParamMap.pipe(
       mergeMap( (data) => this.movieServService.getOMDBMovieById(data.get('imdbId')))
-    ).subscribe(  (movie) =>{ this.detailAbout = movie})
+    ).subscribe(  (movie) =>{ 
+      this.detailAbout = movie
+      this.loader = false
+    })
 
 
 

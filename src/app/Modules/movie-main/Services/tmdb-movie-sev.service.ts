@@ -40,6 +40,7 @@ export class TmdbMovieSevService {
     return this._http.get<any>(uri)
   }
 
+  // TV Related Info
   tmdb_tv_popular(){
     let uri = `${URL.tmdb_tv_main_URl}/popular?api_key=${URL.tmdb_api_key}&language=en-US`
     return this._http.get<any>(uri)
@@ -47,6 +48,11 @@ export class TmdbMovieSevService {
 
   tmdb_tv_top_rated(){
     let uri = `${URL.tmdb_tv_main_URl}/top_rated?api_key=${URL.tmdb_api_key}&language=en-US`
+    return this._http.get<any>(uri)
+  }
+
+  tmdb_tv_in_details(id:any){
+    let uri = `${URL.tmdb_tv_main_URl}/${id}?api_key=${URL.tmdb_api_key}&language=en-US`
     return this._http.get<any>(uri)
   }
 
