@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 import { MainComponentComponent } from './Components/main-component/main-component.component';
 import { MovieSearchComponent } from './Components/movie-search/movie-search.component';
@@ -15,6 +17,15 @@ import { MoviemainRoutingModule } from './movie-mainRouting.module';
 import { TmdbMovieDetailsComponent } from './Components/tmdb-movie-details/tmdb-movie-details.component';
 import { TmdbTvDetailsComponent } from './Components/tmdb-tv-details/tmdb-tv-details.component';
 
+// scroll
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { LastestMoviePopUpComponent } from './Components/lastest-movie-pop-up/lastest-movie-pop-up.component';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
 
 @NgModule({
   declarations: [
@@ -24,7 +35,8 @@ import { TmdbTvDetailsComponent } from './Components/tmdb-tv-details/tmdb-tv-det
     MainDashboardComponent,
     Error404Component,
     TmdbMovieDetailsComponent,
-    TmdbTvDetailsComponent
+    TmdbTvDetailsComponent,
+    LastestMoviePopUpComponent
   ],
   imports: [
     MoviemainRoutingModule,
@@ -32,8 +44,16 @@ import { TmdbTvDetailsComponent } from './Components/tmdb-tv-details/tmdb-tv-det
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatDialogModule,
     MatAutocompleteModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    PerfectScrollbarModule
+  ],
+  providers: [
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+    }
   ],
   exports:[
     MainComponentComponent

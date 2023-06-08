@@ -20,10 +20,10 @@ export class TmdbMovieSevService {
     return this._http.get<any>(uri)
   }
 
-  // tmdb_latest(){
-  //   let uri = `${URL.tmdb_main_URl}/latest?api_key=${URL.tmdb_api_key}&language=en-US`
-  //   return this._http.get<any>(uri)
-  // }
+  tmdb_latest(){
+    let uri = `${URL.tmdb_main_URl}/latest?api_key=${URL.tmdb_api_key}&language=en-US`
+    return this._http.get<any>(uri)
+  }
 
   tmdb_nowPlaying(){
     let uri = `${URL.tmdb_main_URl}/now_playing?api_key=${URL.tmdb_api_key}&language=en-US`

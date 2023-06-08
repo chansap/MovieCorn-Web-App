@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, distinctUntilChanged, filter, mergeMap, startWith, tap } from 'rxjs';
 import { MovieServService } from '../../Services/movie-serv.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LastestMoviePopUpComponent } from '../lastest-movie-pop-up/lastest-movie-pop-up.component';
 
 @Component({
   selector: 'app-main-component',
@@ -18,7 +20,7 @@ export class MainComponentComponent implements OnInit {
   
 
 
-  constructor(private _movieServ : MovieServService) { }
+  constructor(private _movieServ : MovieServService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.searchMoviesCtrl.valueChanges
@@ -39,8 +41,11 @@ export class MainComponentComponent implements OnInit {
   }
 
 
-  optionClick(movie:any){
-    console.log(movie);
+  optionClick(){
+    const dialogRef = this.dialog.open(LastestMoviePopUpComponent,{
+      height: '400px',
+      width: '600px',
+    });
   }
 
 }

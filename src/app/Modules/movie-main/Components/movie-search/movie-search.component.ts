@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { debounceTime, distinctUntilChanged, filter, mergeMap, startWith, tap } from 'rxjs';
 import { MovieServService } from '../../Services/movie-serv.service';
 
+
 @Component({
   selector: 'app-movie-search',
   templateUrl: './movie-search.component.html',
@@ -24,7 +25,7 @@ export class MovieSearchComponent implements OnInit {
     this.searchMoviesCtrl.valueChanges
     .pipe(
       startWith(''),
-      filter( (data:any) => data !== null && data.length >=  3),
+      filter( (data:any) => data !== null && data.length >=  2),
       debounceTime(1000),
       distinctUntilChanged(),
       mergeMap( (movie:any) => this._movieServ.getSearchMovie(movie))

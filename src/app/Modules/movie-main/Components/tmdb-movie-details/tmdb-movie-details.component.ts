@@ -13,6 +13,7 @@ export class TmdbMovieDetailsComponent implements OnInit {
   loader:Boolean = false;
   imgPoster :String = "https://image.tmdb.org/t/p/original"
   detailAbout :any
+  errorMsg : Boolean = false;
 
   
   constructor(private router : Router,
@@ -33,6 +34,12 @@ export class TmdbMovieDetailsComponent implements OnInit {
   }
 
   routeToImdb(imdb_id:any){
-    this.router.navigate(['movieid'], { queryParams: {imdbId: imdb_id} })
+    console.log(imdb_id)
+    if(imdb_id !== null){
+      this.errorMsg = false
+      this.router.navigate(['movieid'], { queryParams: {imdbId: imdb_id} })
+    }else{
+      this.errorMsg = true
+    }
   }
 }

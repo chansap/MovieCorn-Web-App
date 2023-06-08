@@ -1,0 +1,131 @@
+<div mat-dialog-content class="mat-dialog-content">
+  <section
+    class="text-light bg-secondary"
+    style="min-height: 400px; max-width: 700px; border-radius: 5px"
+  >
+    <div class="row justify-content-center">
+      <div
+        class="col-md-4 text-end"
+        *ngIf="latestMovieDetails?.poster_path !== null"
+      >
+        <img
+          src="{{ imgPoster + latestMovieDetails?.poster_path }}"
+          alt="poster_logo"
+          class="img-fluid"
+          style="height: 400px; border-radius: 5px"
+        />
+      </div>
+      <div
+        class="col-md-4 text-center"
+        *ngIf="latestMovieDetails?.poster_path == null"
+      >
+        <p class="h6 text-danger" style="margin-top: 130px">No Poster</p>
+      </div>
+      <div class="col-md-8 pt-3">
+        <p class="h3">{{ latestMovieDetails?.original_title }}</p>
+        <!-- <p class="small">
+        <span
+          class="col-md-3 small"
+          *ngFor="let genre of latestMovieDetails?.genres"
+        >
+          <span class="m-0">{{ genre?.name }},</span>
+        </span>
+        <span> &nbsp; &nbsp;</span>
+        <span class="comm"></span>
+        <span>&nbsp; &nbsp; {{ latestMovieDetails?.original_name }}</span>
+        <span> &nbsp; &nbsp;</span>
+        <span class="comm"></span>
+        <span> &nbsp; &nbsp;</span>
+        <span
+          >Status: &nbsp; {{ latestMovieDetails?.status }} &nbsp;(
+          {{ latestMovieDetails?.first_air_date }} )</span
+        >
+      </p> -->
+
+        <div class="mt-1">
+          <div class="row pt-2">
+            <div class="col-md-2"><p class="small m-0 p-0">Status:</p></div>
+            <div class="col-md-3 small">
+              {{ latestMovieDetails?.status }}
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-1">
+          <div class="row pt-2">
+            <div class="col-md-2"><p class="small m-0 p-0">Voting:</p></div>
+            <div class="col-md-3 small">
+              {{ latestMovieDetails?.vote_average | number : "1.2-2" }}/10
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <p style="margin-bottom: 6px">
+            <span class="only-bold">Overview :</span>
+          </p>
+          <div class="row small">
+            <div class="col-md-12">
+              {{ latestMovieDetails?.overview }}
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <div class="row pt-2">
+            <div class="col-md-3">
+              <p class="small m-0 p-0">Language :</p>
+            </div>
+            <div class="col-md-4">
+              <span
+                *ngFor="let language of latestMovieDetails?.spoken_languages"
+                >{{ language }},<span> &nbsp;</span></span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <div class="row pt-2">
+            <div class="col-md-3">
+              <p class="small m-0 p-0">Popularity :</p>
+            </div>
+            <div class="col-md-3 small">
+              {{ latestMovieDetails?.popularity | number : "1.2-2" }}
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3">
+          <div class="row pt-2">
+            <div class="col-md-7">
+              <a
+                (click)="routeToImdb()"
+                class="btn btn-light btn-sm mt-3"
+                mat-dialog-close
+              >
+                <img
+                  src="../../../../../assets/chevron.png"
+                  alt="logo"
+                  class="img-fluid"
+                />
+                Read more
+              </a>
+            </div>
+            <div class="col-md-4 text-end">
+              <!-- <button class="btn btn-danger" mat-dialog-close>Close</button> -->
+              <a class="btn btn-danger btn-sm mt-3 p-1" mat-dialog-close>
+                <!-- <img
+                  src="../../../../../assets/chevron.png"
+                  alt="logo"
+                  class="img-fluid"
+                /> -->
+                Close
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
