@@ -40,6 +40,11 @@ export class TmdbMovieSevService {
     return this._http.get<any>(uri)
   }
 
+  tmdb_movie_provider(id:any){
+    let providerURI = `${URL.tmdb_main_URl}/${id}/watch/providers?api_key=${URL.tmdb_api_key}`
+    return this._http.get<any>(providerURI);
+  }
+
   // TV Related Info
   tmdb_tv_popular(){
     let uri = `${URL.tmdb_tv_main_URl}/popular?api_key=${URL.tmdb_api_key}&language=en-US`

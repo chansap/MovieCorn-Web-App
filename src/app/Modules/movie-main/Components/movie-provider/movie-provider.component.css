@@ -1,0 +1,16 @@
+div::-webkit-scrollbar {
+    display: none;
+    /* width: px;
+    background: transparent; */
+  }
+
+.movie-slide {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+
+::ng-deep .mat-dialog-container{
+    padding: 0px !important;
+    overflow-x: hidden;
+}

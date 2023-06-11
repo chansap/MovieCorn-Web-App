@@ -1,0 +1,83 @@
+<section class="bg-light text-dark p-2" style="min-height: 330px">
+  <div class="row mt-2">
+    <div class="col-md-3 text-center">
+      <p class="lead">JUST WATCH</p>
+    </div>
+    <div class="col-md-9 text-end">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-x-circle"
+        viewBox="0 0 16 16"
+        mat-dialog-close
+      >
+        <path
+          d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+        />
+        <path
+          d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div *ngIf="rentBuyUsData?.US">
+    <!-- rent -->
+    <div class="p-2" *ngIf="rentBuyUsData?.US?.rent">
+      <div class="ps-2">
+        <div class="mt-1">
+          <p class="h5 text-small">Rent</p>
+        </div>
+        <div class="mt-2 d-flex flex-row movie-slide">
+          <div *ngFor="let singleData of rentBuyUsData?.US?.rent">
+            <img
+              src="{{ imgPoster + singleData?.logo_path }}"
+              class="img-fluid m-2"
+              matTooltip="{{ singleData?.provider_name }}"
+              style="border-radius: 10px"
+              alt="logo"
+              height="50"
+              width="50"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- buy -->
+    <div class="mt-2 p-2" *ngIf="rentBuyUsData?.US?.buy">
+      <div class="ps-2">
+        <div class="mt-1">
+          <p class="h5 text-small">Buy</p>
+        </div>
+        <div class="mt-2 d-flex flex-row movie-slide">
+          <div *ngFor="let singleBuyData of rentBuyUsData?.US?.buy">
+            <img
+              src="{{ imgPoster + singleBuyData?.logo_path }}"
+              class="img-fluid m-2"
+              matTooltip="{{ singleBuyData?.provider_name }}"
+              style="border-radius: 10px"
+              alt="logo"
+              height="50"
+              width="50"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!rentBuyUsData?.US">
+    <div class="row align-items-center">
+      <div
+        class="col d-flex justify-content-center align-items-center mt-5 pt-5"
+      >
+        <p class="small text-danger">
+          No details for watching this yet. Please try later.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

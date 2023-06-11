@@ -117,7 +117,7 @@
               </div>
               <div class="col-md-7">
                 <div class="small only-bold">
-                  {{ detailAbout?.budget }}
+                  {{ convertCurrency(detailAbout?.budget) }}
                 </div>
                 <div class="small">Budget</div>
               </div>
@@ -138,11 +138,25 @@
                   Read more on IMDB
                 </a>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-6" *ngIf="errorMsg">
                 <!-- Error message -->
-                <div class="alert alert-danger mt-2" *ngIf="errorMsg">
+                <div class="alert alert-danger mt-2">
                   <div>Not enough information to show</div>
                 </div>
+                <!-- Watch MOre Content -->
+              </div>
+              <div class="col-md-6 text-end" *ngIf="detailAbout.imdb_id">
+                <a
+                  (click)="providers(detailAbout.id)"
+                  class="btn btn-info mt-3"
+                >
+                  <img
+                    src="../../../../../assets/chevron.png"
+                    alt="logo"
+                    class="img-fluid"
+                  />
+                  Watch Now
+                </a>
               </div>
             </div>
           </div>

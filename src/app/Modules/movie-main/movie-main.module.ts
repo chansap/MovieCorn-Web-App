@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 
 import { MainComponentComponent } from './Components/main-component/main-component.component';
@@ -22,6 +24,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { LastestMoviePopUpComponent } from './Components/lastest-movie-pop-up/lastest-movie-pop-up.component';
+import { MovieProviderComponent } from './Components/movie-provider/movie-provider.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -36,7 +39,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     Error404Component,
     TmdbMovieDetailsComponent,
     TmdbTvDetailsComponent,
-    LastestMoviePopUpComponent
+    LastestMoviePopUpComponent,
+    MovieProviderComponent
   ],
   imports: [
     MoviemainRoutingModule,
@@ -47,6 +51,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MatDialogModule,
     MatAutocompleteModule,
     MatProgressBarModule,
+    MatTooltipModule,
     PerfectScrollbarModule
   ],
   providers: [

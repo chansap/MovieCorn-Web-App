@@ -51,7 +51,7 @@ export class LastestMoviePopUpComponent implements OnInit {
 
 
   routeToImdb(){
-    console.log("CLicked");
+    // console.log("CLicked");
     this.router.navigate(['tmdb'], { queryParams: {tmdbId: this.latestMovieDetails.id} } )
   }
 }

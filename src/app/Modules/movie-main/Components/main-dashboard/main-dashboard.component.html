@@ -33,13 +33,7 @@
           <div class="d-flex flex-row movie-slide">
             <div *ngFor="let i of popmovies">
               <div
-                class="card ms-2 movie-slide"
-                style="
-                  width: 11.4rem;
-                  min-height: 23rem;
-                  max-height: 23rem;
-                  cursor: pointer;
-                "
+                class="card ms-2 movie-slide movie-card"
                 (click)="openTmdbDetail(i.id)"
               >
                 <img
@@ -49,10 +43,10 @@
                   style="width: 180px; max-height: 250px"
                 />
                 <div class="card-body">
-                  <h5 class="card-title small text-dark mb-0">
+                  <h5 class="card-title small text-dark mb-0 text-truncate">
                     {{ i.title }}
                   </h5>
-                  <p class="card-text small text-dark">
+                  <p class="card-text text-muted" style="font-size: 12px">
                     {{ i.release_date }}
                   </p>
                 </div>
@@ -73,13 +67,7 @@
           <div class="d-flex flex-row movie-slide">
             <div *ngFor="let i of nowPlaying">
               <div
-                class="card ms-2 movie-slide"
-                style="
-                  width: 11.4rem;
-                  min-height: 23rem;
-                  max-height: 23rem;
-                  cursor: pointer;
-                "
+                class="card ms-2 movie-slide movie-card"
                 (click)="openTmdbDetail(i.id)"
               >
                 <img
@@ -89,10 +77,13 @@
                   style="width: 180px; max-height: 250px"
                 />
                 <div class="card-body">
-                  <h5 class="card-title small text-dark mb-0">
+                  <h5 class="card-title small text-dark mb-0 text-truncate">
                     {{ i.title }}
                   </h5>
-                  <p class="card-text small text-dark">
+                  <p
+                    class="card-text text-dark text-muted"
+                    style="font-size: 12px"
+                  >
                     {{ i.release_date }}
                   </p>
                 </div>
@@ -113,13 +104,7 @@
           <div class="d-flex flex-row movie-slide">
             <div *ngFor="let i of upcmng">
               <div
-                class="card ms-2 movie-slide"
-                style="
-                  width: 11.4rem;
-                  min-height: 23rem;
-                  max-height: 23rem;
-                  cursor: pointer;
-                "
+                class="card ms-2 movie-slide movie-card"
                 (click)="openTmdbDetail(i.id)"
               >
                 <img
@@ -129,10 +114,13 @@
                   style="width: 180px; max-height: 250px"
                 />
                 <div class="card-body">
-                  <h5 class="card-title small text-dark mb-0">
+                  <h5 class="card-title small text-dark mb-0 text-truncate">
                     {{ i.title }}
                   </h5>
-                  <p class="card-text small text-dark">
+                  <p
+                    class="card-text text-muted text-dark"
+                    style="font-size: 12px"
+                  >
                     {{ i.release_date }}
                   </p>
                 </div>
@@ -153,13 +141,7 @@
           <div class="d-flex flex-row movie-slide">
             <div *ngFor="let i of topRated">
               <div
-                class="card ms-2 movie-slide"
-                style="
-                  width: 11.4rem;
-                  min-height: 23rem;
-                  max-height: 23rem;
-                  cursor: pointer;
-                "
+                class="card ms-2 movie-slide movie-card"
                 (click)="openTmdbDetail(i.id)"
               >
                 <img
@@ -169,10 +151,13 @@
                   style="width: 180px; max-height: 250px"
                 />
                 <div class="card-body">
-                  <h5 class="card-title small text-dark mb-0">
+                  <h5 class="card-title small text-dark mb-0 text-truncate">
                     {{ i.title }}
                   </h5>
-                  <p class="card-text small text-dark">
+                  <p
+                    class="card-text text-muted text-dark"
+                    style="font-size: 12px"
+                  >
                     {{ i.release_date }}
                   </p>
                 </div>
@@ -193,13 +178,7 @@
           <div class="d-flex flex-row movie-slide">
             <div *ngFor="let i of tv_popular">
               <div
-                class="card ms-2 movie-slide"
-                style="
-                  width: 11.4rem;
-                  min-height: 23rem;
-                  max-height: 23rem;
-                  cursor: pointer;
-                "
+                class="card ms-2 movie-slide movie-card"
                 (click)="openTmdbTVDetail(i.id)"
               >
                 <img
@@ -209,10 +188,13 @@
                   style="width: 180px; max-height: 250px"
                 />
                 <div class="card-body">
-                  <h5 class="card-title small text-dark mb-0">
+                  <h5 class="card-title small text-dark mb-0 text-truncate">
                     {{ i.original_name }}
                   </h5>
-                  <p class="card-text small text-dark">
+                  <p
+                    class="card-text text-muted text-dark"
+                    style="font-size: 12px"
+                  >
                     {{ i.first_air_date }}
                   </p>
                 </div>
@@ -233,13 +215,7 @@
           <div class="d-flex flex-row movie-slide">
             <div *ngFor="let i of tv_top_rated">
               <div
-                class="card ms-2 movie-slide"
-                style="
-                  width: 11.4rem;
-                  min-height: 23rem;
-                  max-height: 23rem;
-                  cursor: pointer;
-                "
+                class="card ms-2 movie-slide movie-card"
                 (click)="openTmdbTVDetail(i.id)"
               >
                 <img
@@ -249,10 +225,13 @@
                   style="width: 180px; max-height: 250px"
                 />
                 <div class="card-body">
-                  <h5 class="card-title small text-dark mb-0">
+                  <h5 class="card-title small text-dark mb-0 text-truncate">
                     {{ i.original_name }}
                   </h5>
-                  <p class="card-text small text-dark">
+                  <p
+                    class="card-text text-muted text-dark"
+                    style="font-size: 12px"
+                  >
                     {{ i.first_air_date }}
                   </p>
                 </div>
@@ -263,4 +242,14 @@
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    <nav class="navbar navbar-dark bg-dark text-light mt-5">
+      <div class="navbar-expand m-auto navbar-text">
+        Developed with <i class="bi bi-heart-fill"></i> by
+        <b>Saptarshi Chandra</b>
+      </div>
+    </nav>
+  </footer>
 </div>
